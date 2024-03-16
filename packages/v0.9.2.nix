@@ -129,6 +129,16 @@ in
       runHook postInstallCheck
     '';
 
+    postInstall = ''
+      mkdir -p $out/third_party
+      cp -r $src/third_party/* $out/third_party
+      # TODO:
+      # - fix parent copy permission error
+      # cd $src/third_party
+      # cp -r --parents **/{*.h,*.hpp,LICENSE} $out/third_party
+      # cd -
+    '';
+
     meta = with lib; {
       changelog = "https://github.com/duckdb/duckdb/releases/tag/v${version}";
       description = "Embeddable SQL OLAP Database Management System";

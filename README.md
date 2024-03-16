@@ -46,9 +46,9 @@ This `duckdb-nix` flake assumes you have already [installed nix](https://determi
       {
         devShells.default = pkgs.mkShell {
           packages = [
-            # pkgs.duckdb-pkgs.main             # main
-            # pkgs.duckdb-pkgs.duckdb-v0_10_0   # v0.10.0
-            pkgs.duckdb-pkgs.duckdb-v0_9_2      # v0.9.2
+            pkgs.duckdb-pkgs.v0_10_0
+            # pkgs.duckdb-pkgs.v0_9_2
+            # pkgs.duckdb-pkgs.main
           ];
         };
       };
@@ -58,4 +58,4 @@ This `duckdb-nix` flake assumes you have already [installed nix](https://determi
 
 ## License
 
-`duckdb-nix` is released under the MIT license
+`duckdb-nix` is released under the [MIT license](./LICENSE)

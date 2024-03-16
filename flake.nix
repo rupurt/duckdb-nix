@@ -25,13 +25,13 @@
         main = pkgs.callPackage ./packages/main.nix {
           stdenv = pkgs.libcxxStdenv;
         };
-        duckdb-v0_10_0 = pkgs.callPackage ./packages/v0.10.0.nix {
+        v0_10_0 = pkgs.callPackage ./packages/v0.10.0.nix {
           stdenv = pkgs.libcxxStdenv;
         };
-        duckdb-v0_9_2 = pkgs.callPackage ./packages/v0.9.2.nix {
+        v0_9_2 = pkgs.callPackage ./packages/v0.9.2.nix {
           stdenv = pkgs.libcxxStdenv;
         };
-        default = duckdb-v0_10_0;
+        default = v0_10_0;
       };
 
       # nix fmt
