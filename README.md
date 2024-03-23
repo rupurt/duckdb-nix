@@ -46,7 +46,8 @@ This `duckdb-nix` flake assumes you have already [installed nix](https://determi
       {
         devShells.default = pkgs.mkShell {
           packages = [
-            pkgs.duckdb-pkgs.v0_10_0
+            pkgs.duckdb-pkgs.v0_10_1
+            # pkgs.duckdb-pkgs.v0_10_0
             # pkgs.duckdb-pkgs.v0_9_2
             # pkgs.duckdb-pkgs.main
           ];
