@@ -25,6 +25,9 @@
         main = pkgs.callPackage ./packages/main.nix {
           stdenv = pkgs.libcxxStdenv;
         };
+        v1_2_0-dev = pkgs.callPackage ./packages/v1.2.0-dev.nix {
+          stdenv = pkgs.libcxxStdenv;
+        };
         v1_1_3 = pkgs.callPackage ./packages/v1.1.3.nix {
           stdenv = pkgs.libcxxStdenv;
         };
