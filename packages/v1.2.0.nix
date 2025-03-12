@@ -13,11 +13,11 @@
   withOdbc ? false,
   specialArgs ? {},
 }: let
-  defaultArgs = {
+  defaultArgs = rec {
     pname = "duckdb";
-    version = "1.2.1-dev";
-    rev = "refs/heads/main";
-    hash = "sha256-hD+m2TIRQ81pxJKk8Os77kFXRJ7gV2oDaV3tJKjSjqk=";
+    version = "1.2.0";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-93iBUsNKXRGdnN1ZRSWJfnSNM23U/M0sudgHk6HGIhM=";
   };
   args = defaultArgs // specialArgs;
   enableFeature = yes:
@@ -57,6 +57,7 @@ in
         "-DDUCKDB_EXTENSION_CONFIGS=${src}/.github/config/in_tree_extensions.cmake"
         "-DBUILD_ODBC_DRIVER=${enableFeature withOdbc}"
         "-DJDBC_DRIVER=${enableFeature withJdbc}"
+        "-DOVERRIDE_GIT_DESCRIBE=v${version}"
       ]
       ++ lib.optionals doInstallCheck [
         # development settings

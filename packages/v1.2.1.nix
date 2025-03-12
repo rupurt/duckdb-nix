@@ -13,10 +13,11 @@
   withOdbc ? false,
   specialArgs ? {},
 }: let
-  defaultArgs = {
+  defaultArgs = rec {
     pname = "duckdb";
-    version = "1.2.0";
-    hash = "sha256-8Q93ewdORKvahaMYV4FLxnFKf2GcL67E5dVfRWLu1zs=";
+    version = "1.2.1";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-ez5BBZ+Yw+UkdpI3VvRZrYZPfk3Nkk3JmrJBdg8N+e0=";
   };
   args = defaultArgs // specialArgs;
   enableFeature = yes:
@@ -31,7 +32,7 @@ in
     src = fetchFromGitHub {
       owner = args.pname;
       repo = args.pname;
-      rev = "refs/heads/main";
+      rev = args.rev;
       hash = args.hash;
     };
 
