@@ -25,6 +25,9 @@
         main = pkgs.callPackage ./packages/main.nix {
           stdenv = pkgs.libcxxStdenv;
         };
+        v1_2_2 = pkgs.callPackage ./packages/v1.2.2.nix {
+          stdenv = pkgs.libcxxStdenv;
+        };
         v1_2_1 = pkgs.callPackage ./packages/v1.2.1.nix {
           stdenv = pkgs.libcxxStdenv;
         };
@@ -46,7 +49,7 @@
         v0_9_2 = pkgs.callPackage ./packages/v0.9.2.nix {
           stdenv = pkgs.libcxxStdenv;
         };
-        default = v1_2_1;
+        default = v1_2_2;
       };
 
       # nix fmt

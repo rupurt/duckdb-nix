@@ -5,6 +5,7 @@ Nix flake for development with multiple DuckDB versions
 ## Versions
 
 - [main](https://github.com/duckdb/duckdb/commits/main)
+- [v1.2.2](https://github.com/duckdb/duckdb/releases/tag/v1.2.2)
 - [v1.2.1](https://github.com/duckdb/duckdb/releases/tag/v1.2.1)
 - [v1.2.0](https://github.com/duckdb/duckdb/releases/tag/v1.2.0)
 - [v1.1.3](https://github.com/duckdb/duckdb/releases/tag/v1.1.3)
@@ -51,7 +52,8 @@ This `duckdb-nix` flake assumes you have already [installed nix](https://determi
       {
         devShells.default = pkgs.mkShell {
           packages = [
-            pkgs.duckdb-pkgs.v1_2_1
+            pkgs.duckdb-pkgs.v1_2_2
+            # pkgs.duckdb-pkgs.v1_2_1
             # pkgs.duckdb-pkgs.v1_2_0
             # pkgs.duckdb-pkgs.v1_1_3
             # pkgs.duckdb-pkgs.v0_10_2
